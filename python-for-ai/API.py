@@ -16,3 +16,4 @@ print(data)
 # if we want the data type we are confused weither it is dict or not
 type(data)
 data["current"]
+print("this is weather api")
