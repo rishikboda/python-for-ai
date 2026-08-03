@@ -6,4 +6,4 @@ print("hello world!")
 #git commit -m "made some changes"
 #git push
 
-#and now save the file in vs ccode and do the changes in the git hub
+#and now save the file in vscode and do the changes in the git hub
