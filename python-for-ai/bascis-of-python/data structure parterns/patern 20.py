@@ -1,23 +1,27 @@
 def patern(n):
     for i in range(0, n):
-        for j in range(0, n - i - 1 + 1):  # Equiv to j <= n-i-1
-            print("  ", end="")
+        ch = ord("A")
+        # The midpoint index for the current row's characters
+        break_point = (2 * i - 1) / 2
 
-        # chr(64) is 'A' - 1 (the character right before 'A')
-        ch_code = 64
-        breakpoint_val = (2 * i) // 2
+        # 1. Print leading double spaces
+        for j in range(0, n - i - 1):
+            print(" ", end=" ")
 
-        for j in range(0, 2 * i + 1):  # Equiv to j <= 2*i
-            if j <= breakpoint_val:
-                ch_code += 1
+        # 2. Print characters with correct increment/decrement logic
+        for j in range(0, 2 * i + 1):
+            print(chr(ch), end=" ")
+            if j < break_point:
+                ch += 1
             else:
-                ch_code -= 1
-            print(chr(ch_code) + " ", end="")
+                ch -= 1
 
-        for j in range(0, n - i - 1 + 1):  # Equiv to j <= n-i-1
-            print("  ", end="")
+        # 3. Print trailing double spaces
+        for j in range(0, n - i - 1):
+            print(" ", end=" ")
 
-        print()  # Equiv to cout<<endl;
+        # 4. Move to the next row
+        print(" ")
 
 
-patern(3)
+patern(4)
