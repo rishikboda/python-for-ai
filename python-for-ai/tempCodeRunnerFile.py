@@ -1,33 +1,55 @@
-import math
-import random
-import turtle
+balance = 10000
+pin = 1234
+name = "rishik"
+while True:
+    print('"1" : to check the balance')
+    print('"2" : to deposit')
+    print('"3" : to withdrawl')
+    print('"4" : to exit')
+    choice = int(input("enter the choice"))
 
-screen = turtle.Screen()
-screen.bgcolor("black")
-t = turtle.Turtle()
-t.speed(0)
-t.hideturtle()
-t.pensize(1)
-colors = ["red", "blue", "lime", "yellow", "cyan", "magenta", "orange", "pink"]
+    if choice == 1:
+        account_no = int(input("enter the account number"))
+        user_pin = int(input("enter your pin number"))
 
-for i in range(120):
-  t.penup()
-  t.goto(0, 40)
-  angle = i * (math.pi * 2) / 120
-  x = 16 * (math.sin(angle) ** 3) * 15
-  y = (
-      13 * math.cos(angle)
-      - 5 * math.cos(2 * angle)
-      - 2 * math.cos(3 * angle)
-      - math.cos(4 * angle)
-  ) * 15
-  c = random.choice(colors)
-  t.color(c)
-  t.pendown()
-  t.goto(x, y)
-  for _ in range(8):
-    t.forward(6)
-    t.backward(6)
-    t.right(45)
+        if pin == user_pin:
+            print(f"your avaliable balance = {balance} of account number {account_no}")
+            print(f"account holder name = {name}")
+        else:
+            print("invaild pin please enter the correct pin")
+    elif choice == 2:
+        if pin == user_pin:
+            account_no = int(input("enter the account number"))
+            user_pin = int(input("enter your pin number"))
 
-turtle.done()
+            amount = int(input("enter the amount you want to deposite"))
+            balance += amount
+            print(
+                f"available balance after deposite = {balance} in your account number {account_no}"
+            )
+            print(f"account holder name = {name}")
+        else:
+            print("invaild pin please enter the correct pin")
+
+    elif choice == 3:
+        if pin == user_pin:
+            account_no = int(input("enter the account number"))
+            user_pin = int(input("enter your pin number"))
+
+            amount = int(input("enter the amount you want to withdrawl"))
+            if amount <= balance:
+                balance -= amount
+                print(
+                    f"your balance after withdrawl = {balance} in your account number{account_no}"
+                )
+                print(f"account holder name {name}")
+            else:
+                print("insufficient balance")
+        else:
+            print("invaild pin please enter the correct pin")
+
+    elif choice == 4:
+        print("thanks for banking with us")
+        break
+    else:
+        print("please enter the valid number")
