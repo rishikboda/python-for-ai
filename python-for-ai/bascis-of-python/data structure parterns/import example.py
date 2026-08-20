@@ -1,7 +1,7 @@
 from datetime import datetime
-from patern24 import patern
+from patern12 import pattern
 
 today = datetime.today()
 
 print(today)
-patern(5)
+pattern(9)
