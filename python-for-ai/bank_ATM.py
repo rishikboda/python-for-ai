@@ -18,10 +18,9 @@ while True:
         else:
             print("invaild pin please enter the correct pin")
     elif choice == 2:
+        account_no = int(input("enter the account number"))
+        user_pin = int(input("enter your pin number"))
         if pin == user_pin:
-            account_no = int(input("enter the account number"))
-            user_pin = int(input("enter your pin number"))
-
             amount = int(input("enter the amount you want to deposite"))
             balance += amount
             print(
@@ -32,10 +31,10 @@ while True:
             print("invaild pin please enter the correct pin")
 
     elif choice == 3:
-        if pin == user_pin:
-            account_no = int(input("enter the account number"))
-            user_pin = int(input("enter your pin number"))
+        account_no = int(input("enter the account number"))
+        user_pin = int(input("enter your pin number"))
 
+        if pin == user_pin:
             amount = int(input("enter the amount you want to withdrawl"))
             if amount <= balance:
                 balance -= amount
