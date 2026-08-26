@@ -16,3 +16,6 @@ print(arr)
 # an array but to uderstand the concept of recursion i use this method
 arr.reverse()
 print(arr)
+# if you observe first the function swap revrese the array or list
+# into 54321 and then inbuild function reverse
+# again reverse and kept the array in normal 12345
