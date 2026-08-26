@@ -1,0 +1,21 @@
+from recursive import f6
+
+
+def f1(n):
+    if n == 0:
+        return 0
+    else:
+        return n + f1(n - 1)
+
+
+# factorial of an number
+def f2(n):
+    if n == 0:
+        return 1
+    else:
+        return n * f2(n - 1)
+
+
+print(f6(5))
+print(f1(5))
+print(f2(5))
