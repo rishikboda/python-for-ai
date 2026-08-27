@@ -12,5 +12,5 @@ class Solution(object):
 
 
 solution = Solution()
-result = solution.isPalindrome(1234)
+result = solution.isPalindrome(151)
 print(result)
