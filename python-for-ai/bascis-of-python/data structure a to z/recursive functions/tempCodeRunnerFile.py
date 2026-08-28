@@ -1,18 +1,15 @@
-def swap2(x, arr, n):
-    if x >= n // 2:
-        return
-    else:
-        temp = arr[x]
-        arr[x] = arr[n - 1 - x]
-        arr[n - 1 - x] = temp
-        swap2(x + 1, arr, n)
+class solution:
+    def palindrome(self, i, name):
+        name.lower()
+        name.remove(" ")
+        if i >= name.len() / 2:
+            return True
+        if name[i] != name[name.len() - i - 1]:
+            return False
+        return self.palindrome(i + 1, name)
 
 
-n = 5
-arr = [1, 2, 3, 4, 5]
-swap2(0, arr, n)
-print(arr)
-# simple by using python in build function we can reverse
-# an array but to uderstand the concept of recursion i use this method
-arr.reverse()
-print(arr)
+s = solution()
+x = s.palindrome(0, "name is rishDHDIL BDBjv ")
+
+print(x)
