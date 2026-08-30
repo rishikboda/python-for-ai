@@ -10,7 +10,3 @@ def f1(i, name):
 
     # 3. Move to the next set of letters
     return f1(i + 1, name)
-
-
-name = "madam"
-print(f1(0, name))
